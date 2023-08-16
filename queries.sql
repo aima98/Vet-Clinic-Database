@@ -139,7 +139,7 @@ ORDER BY visits.date_of_visit ASC LIMIT 1;
 SELECT * FROM animals JOIN visits  
 ON animals.id = visits.animals_id JOIN vets 
 ON vets.id = visits.vet_id 
-ORDER BY visits.date_of_visit DESC;
+ORDER BY visits.date_of_visit DESC
 LIMIT 1;
 
 -- Number of visits with vet that did not specialize in that animal's species

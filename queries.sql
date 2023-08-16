@@ -136,12 +136,11 @@ ON vets.id = visits.vet_id WHERE vets.name = 'Maisy Smith'
 ORDER BY visits.date_of_visit ASC LIMIT 1;
 
 -- Most recent visit: animal information, vet information, and date of visit
-SELECT animals.name, vets.name, visits.date_of_visit  
-FROM animals JOIN visits 
+SELECT * FROM animals JOIN visits  
 ON animals.id = visits.animals_id JOIN vets 
 ON vets.id = visits.vet_id 
 ORDER BY visits.date_of_visit DESC;
-
+LIMIT 1;
 
 -- Number of visits with vet that did not specialize in that animal's species
 SELECT COUNT(*) FROM visits JOIN animals 

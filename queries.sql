@@ -26,9 +26,10 @@ COMMIT;
 SELECT * FROM animals;
 
 BEGIN TRANSACTION;
-DELETE FROM animals;
+DELETE FROM animals WHERE ;
+SELECT COUNT(*) FROM ANIMALS;
 ROLLBACK;
-SELECT * FROM animals;
+SELECT COUNT(*) FROM ANIMALS;
 
 BEGIN TRANSACTION;
 DELETE FROM animals WHERE date_of_birth > '2022-01-01';
@@ -48,7 +49,7 @@ SELECT COUNT(*) FROM animals WHERE escape_attempts = 0;
 SELECT AVG(weight_kg) FROM animals;
 
 -- Animals that escapes the most,  the ones neutered or not
-SELECT neutered, SUM(escape_attempts) FROM animals GROUP BY neutered;
+SELECT neutered, MAX(escape_attempts) FROM animals GROUP BY neutered;
 
 -- The minimum and maximum weight of each type of animal
 SELECT species, MIN(weight_kg), MAX(weight_kg) FROM animals GROUP BY species;
